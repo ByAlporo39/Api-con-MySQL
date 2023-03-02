@@ -4,37 +4,24 @@
  */
 package com.ponce.API.model;
 
-import java.util.List;
-import javax.persistence.CascadeType;
+
 import javax.persistence.Entity;
+import lombok.AllArgsConstructor;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.OneToMany;
-import javax.persistence.Table;
-import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-
-
-
-
 
 /**
  *
  * @author alvaroponrod
  */
 @Entity
-@Table(name = "category")
 @Data @NoArgsConstructor @AllArgsConstructor
-public class Category {
-
-   @Id @GeneratedValue
+public class Product {
+    @Id @GeneratedValue
     private Integer id;
-    private String category;
     
-    @OneToMany(cascade = CascadeType.ALL)
-    @JoinColumn(name = "cp_fk")
-    private List<Product> products;
-
+    private String product_name;
+    private float price;
 }
